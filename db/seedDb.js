@@ -22,33 +22,22 @@ for (let i = 0; i < 100; i += 1) {
   });
 }
 
-const bookingsQuery = 'INSERT INTO bookings (room_id, check_in, check_out, adults, children, infants) VALUES (?, ?, ?, ?, ?, ?)';
-const blackoutsQuery = 'INSERT INTO blackouts (room_id, blackout_date) VALUES (?, ?)';
+const bookingsQuery = 'INSERT INTO bookings (room_id, check_in, check_out, adults, children, infants, blackout) VALUES (?, ?, ?, ?, ?, ?, ?)';
 
-let roomId = 100;
+let roomId = 1;
 while (roomId <= 100) {
   const bookingsPerRoom = faker.random.number({ min: 10, max: 70 });
   for (let i = 0; i < bookingsPerRoom; i += 1) {
-    const checkInDate = faker.date.between('2018-01-01', '2019-07-31');
-    const checkOutDate = faker.date.future((10 / 365), checkInDate);
+    const checkInDate = faker.date.between('2018-12-01', '2019-12-31');
+    const checkOutDate = faker.date.future((14 / 365), checkInDate);
     connection.query(bookingsQuery, [roomId, checkInDate, checkOutDate, faker.random.number({ min: 1, max: 3 }),
-      faker.random.number(2), faker.random.objectElement({ one: 0, two: 0, three: 1 })], (err) => {
+      faker.random.number(2), faker.random.objectElement({ one: 0, two: 0, three: 1 }), false], (err) => {
       if (err) {
         throw err;
       }
     });
   }
 
-  const blackoutsPerRoom = faker.random.number({ min: 20, max: 100 });
-  for (let i = 0; i < blackoutsPerRoom; i += 1) {
-    const blackoutDate = faker.date.between('2018-01-01', '2019-07-31');
-    connection.query(blackoutsQuery, [roomId, blackoutDate], (err) => {
-      if (err) {
-        throw err;
-      }
-    });
-  }
-  
   if (roomId === 100) {
     console.log('Bookings successfully added to db');
   }
