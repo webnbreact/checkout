@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS booking;
+
 CREATE DATABASE IF NOT EXISTS booking;
 
 USE booking;
