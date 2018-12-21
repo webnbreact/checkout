@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS booking_checkout;
+CREATE DATABASE IF NOT EXISTS booking;
 
-USE booking_checkout;
+USE booking;
 
 CREATE TABLE IF NOT EXISTS rooms (
   room_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -21,13 +21,6 @@ CREATE TABLE IF NOT EXISTS bookings (
   adults INT NOT NULL,
   children INT NOT NULL,
   infants INT NOT NULL,
+  blackout BOOLEAN NOT NULL,
   FOREIGN KEY (room_id) REFERENCES rooms (room_id)
 );
-
-CREATE TABLE IF NOT EXISTS blackouts (
-  blackout_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  room_id INT NOT NULL,
-  blackout_date DATE NOT NULL,
-  FOREIGN KEY (room_id) REFERENCES rooms (room_id)
-);
-
