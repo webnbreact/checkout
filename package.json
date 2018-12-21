@@ -10,7 +10,6 @@
   "scripts": {
     "build": "webpack --watch -d",
     "start": "nodemon server/index.js",
-    "start:dev": "webpack-dev-server",
     "seed-db": "mysql -u root < db/schema.sql && node db/seedDb.js"
   },
   "dependencies": {
