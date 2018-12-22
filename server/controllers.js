@@ -1,6 +1,6 @@
 const db = require('../db/index.js');
 
-const getRoomData = (roomId) => {
+const getRoomBookingData = (roomId) => {
   return new Promise((resolve, reject) => {
     const query = 'SELECT bookings.room_id, booking_id, nightly_price, past_week_views, cleaning_fee, service_fee, \
       last_updated, review_count, avg_rating, check_in, check_out, adults, children, infants, blackout FROM rooms \
@@ -15,4 +15,4 @@ const getRoomData = (roomId) => {
   });
 };
 
-module.exports.getRoomData = getRoomData;
+module.exports.getRoomBookingData = getRoomBookingData;

@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
-const { getRoomData } = require('./controllers.js');
+const { getRoomBookingData } = require('./controllers.js');
 
 const app = express();
 
@@ -10,7 +10,7 @@ app.use(morgan('tiny'));
 
 app.get('/rooms/:id/booking', (req, res) => {
   const roomId = req.params.id;
-  getRoomData(roomId)
+  getRoomBookingData(roomId)
     .then((roomInfo) => {
       res.send(roomInfo);
     }).catch((err) => {
