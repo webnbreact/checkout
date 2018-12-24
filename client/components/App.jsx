@@ -11,11 +11,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
-        <Book />
         <div>
-          <span>Report this listing</span>
-        </div>
+          <Header />
+          <Book />
+          <div>
+            <span>Report this listing</span>
+          </div>
+        </div>  
       </div>
     );
   }
