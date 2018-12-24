@@ -17,7 +17,7 @@ class App extends React.Component {
           <div>
             <span>Report this listing</span>
           </div>
-        </div>  
+        </div>
       </div>
     );
   }
