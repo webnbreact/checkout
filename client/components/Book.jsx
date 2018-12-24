@@ -1,4 +1,6 @@
 import React from 'react';
+import Dates from './Dates.jsx';
+import Guests from './Guests.jsx';
 
 const Book = () => (
   <form action="">
