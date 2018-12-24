@@ -5,7 +5,9 @@ const { getRoomBookingData } = require('./controllers.js');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/../public')));
+const mainPagePath = path.join(__dirname, '/../public');
+app.use(express.static(mainPagePath));
+app.use('/rooms/:id/', express.static(mainPagePath));
 app.use(morgan('tiny'));
 
 app.get('/rooms/:id/booking', (req, res) => {
