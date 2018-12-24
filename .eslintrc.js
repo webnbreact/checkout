@@ -6,5 +6,6 @@ module.exports = {
         'no-multi-str': 0,
         'no-loop-func': 0,
         'arrow-body-style': 0,
+        'import/extensions': 0,
     }
 };
