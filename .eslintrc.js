@@ -7,5 +7,6 @@ module.exports = {
         'no-loop-func': 0,
         'arrow-body-style': 0,
         'import/extensions': 0,
+        'no-undef': 0,
     }
 };

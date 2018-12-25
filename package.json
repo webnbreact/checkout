@@ -13,7 +13,7 @@
     "start": "nodemon server/index.js",
     "seed-db": "mysql -u root < db/schema.sql && node db/seedDb.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -43,6 +43,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
+    "jest-fetch-mock": "^2.1.0",
     "jest-styled-components": "^6.3.1",
     "react-test-renderer": "^16.7.0",
     "webpack": "^4.28.0",
@@ -52,6 +53,7 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "automock": false
   }
 }

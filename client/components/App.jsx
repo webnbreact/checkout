@@ -18,25 +18,24 @@ class App extends React.Component {
 
   componentDidMount() {
     const roomId = window.location.pathname.substring(7, 10);
-    fetch(`/rooms/${roomId}/booking`)
+    fetch(`/rooms/${roomId || 100}/booking`)
       .then((data) => {
         return data.json();
       }).then((roomInfo) => {
-        const {nightly_price, past_week_views, cleaning_fee, service_fee, last_updated, review_count, avg_rating} = roomInfo[0];
+        const { nightly_price, past_week_views, cleaning_fee, service_fee, last_updated, review_count, avg_rating } = roomInfo[0];
         this.setState({
-          nightlyPrice: nightly_price, 
-          pastWeekViews: past_week_views, 
-          cleaningFee: cleaning_fee, 
-          serviceFee: service_fee, 
-          lastUpdated: last_updated, 
-          reviewCount: review_count, 
-          avgRating: avg_rating
+          nightlyPrice: nightly_price,
+          pastWeekViews: past_week_views,
+          cleaningFee: cleaning_fee,
+          serviceFee: service_fee,
+          lastUpdated: last_updated,
+          reviewCount: review_count,
+          avgRating: avg_rating,
         });
-      });
+      }).catch((err) => { throw err; });
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <div>
