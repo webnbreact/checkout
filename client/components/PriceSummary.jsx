@@ -2,4 +2,4 @@ import React from 'react';
 
 
 
-export default PriceSummary;
+// export default PriceSummary;

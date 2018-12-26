@@ -20,7 +20,7 @@ describe('App component', () => {
     expect(state.serviceFee).toBeDefined();
   });
 
-  it('should render two components', () => {
+  it('should render the Header and Book components', () => {
     const wrapper = shallow(<App />, { disableLifecycleMethods: true });
     expect(wrapper.find(Header)).toHaveLength(1);
     expect(wrapper.find(Book)).toHaveLength(1);
