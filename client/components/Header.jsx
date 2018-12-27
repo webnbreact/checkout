@@ -8,7 +8,7 @@ const Header = ({ state }) => {
   const halfStar = <i className="fas fa-star-half" />;
 
   return (
-    <div>
+    <div style={{ marginBottom: '15px' }}>
       <div>
         <Price>${state.nightlyPrice}</Price>
         <Text> per night</Text>

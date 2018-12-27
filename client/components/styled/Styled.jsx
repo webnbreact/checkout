@@ -4,7 +4,7 @@ export const Module = styled.div`
   box-sizing: border-box;
   min-height: 365px;
   border: 1px solid #ebebeb;
-  margin-top: 76px;
+  margin-top: 66px;
   padding: 18px 26px;
   overflow: hidden;
 `;
@@ -40,6 +40,14 @@ export const ButtonUnderline = styled(Button)`
   font-weight: 300;
   &:hover {
     text-decoration: underline;
+  };
+`;
+
+export const ButtonQuest = styled(Button)`
+  font-size: 15px;
+  padding-left: 5px;
+  &:hover {
+    color: rgb(0, 132, 137);
   };
 `;
 
@@ -123,12 +131,16 @@ export const PriceSummaryStyle = styled.div`
   box-sizing: border-box;
   height: 131px;
   width: 100%;
-  margin-bottom: 28px;
+  margin-top: 20px;
+  margin-bottom: 18px;
 `;
 
 export const PriceSummaryLine = styled.div`
-  height: 29px;
+  display: flex;
+  justify-content: space-between;
+  height: 24px;
   font-size: medium;
-  position: relative;
   font-weight: 300;
+  padding-top: 3px;
+  box-sizing: border-box;
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, PriceSummaryStyle, PriceSummaryLine } from './styled/Styled.jsx';
+import { Divider, PriceSummaryStyle, PriceSummaryLine, ButtonQuest } from './styled/Styled.jsx';
 
 const PriceSummary = ({ nightlyPrice, cleaningFee, serviceFee }) => (
   <PriceSummaryStyle>
@@ -15,27 +15,33 @@ const PriceSummary = ({ nightlyPrice, cleaningFee, serviceFee }) => (
     <PriceSummaryLine>
       <div>
         <span>Cleaning fee</span>
+        <ButtonQuest>
+          <i class="far fa-question-circle"></i>
+        </ButtonQuest>
       </div>
       <div>
-        <span></span>
+        <span>${cleaningFee}</span>
       </div>
     </PriceSummaryLine>
     <Divider />
     <PriceSummaryLine>
       <div>
         <span>Service fee</span>
+        <ButtonQuest>
+          <i class="far fa-question-circle"></i>
+        </ButtonQuest>
       </div>
       <div>
-        <span></span>
+        <span>${serviceFee}</span>
       </div>
     </PriceSummaryLine>
     <Divider />
-    <PriceSummaryLine>
+    <PriceSummaryLine style={{ fontWeight: '500' }}>
       <div>
         <span>Total</span>
       </div>
       <div>
-        <span></span>
+        <span>${nightlyPrice + cleaningFee + serviceFee}</span>
       </div>
     </PriceSummaryLine>
   </PriceSummaryStyle>

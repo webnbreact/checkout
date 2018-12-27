@@ -8,8 +8,8 @@ class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checkedIn: true,   // change back to false after testing
-      checkedOut: true,   // change back to false after testing
+      checkedIn: true,    // default value should be false
+      checkedOut: true,   // changed to true for testing
       checkinDate: null,
       checkoutDate: null,
       dropdown: 'none',     // -> can be 'guest', 'checkinCal', or 'checkoutCal'
@@ -36,24 +36,26 @@ class Book extends React.Component {
   render() {
     const { nightlyPrice, cleaningFee, serviceFee } = this.props.state;
     return (
-      <form action="">
-        <div>
-          <Dates dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} />
-          <Guests dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleChange={this.handleChange} />
-        </div>
-        <div>
-          {this.state.checkedIn && this.state.checkedOut ? 
-            <PriceSummary nightlyPrice={nightlyPrice} cleaningFee={cleaningFee} serviceFee={serviceFee} /> : null}
-        </div>
-        <div>
-          <ButtonSubmit type="submit">
-            <span>Request to Book</span>
-          </ButtonSubmit>
-        </div>
-        <div>
-          <CenterText>You won't be charged yet</CenterText>
-        </div>
-      </form>
+      <div style={{ marginTop: '15px' }}>
+        <form action="">
+          <div>
+            <Dates dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} />
+            <Guests dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleChange={this.handleChange} />
+          </div>
+          <div>
+            {this.state.checkedIn && this.state.checkedOut ? 
+              <PriceSummary nightlyPrice={nightlyPrice} cleaningFee={cleaningFee} serviceFee={serviceFee} /> : null}
+          </div>
+          <div>
+            <ButtonSubmit type="submit">
+              <span>Request to Book</span>
+            </ButtonSubmit>
+          </div>
+          <div>
+            <CenterText>You won't be charged yet</CenterText>
+          </div>
+        </form>
+      </div>
     );
   }
 }
