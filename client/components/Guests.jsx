@@ -1,10 +1,11 @@
 import React from 'react';
 import GuestDropdown from './GuestDropdown.jsx';
+import { Text } from './styled/Styled.jsx';
 
 const Guests = ({dropdown, displayDropdown, handleChange}) => (
   <div>
     <label>
-      <span>Guests</span>
+      <Text>Guests</Text>
     </label>
     <div>
       <button type="button" onClick={() => displayDropdown('guest')}>

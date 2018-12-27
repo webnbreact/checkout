@@ -2,6 +2,7 @@ import React from 'react';
 import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import PriceSummary from './PriceSummary.jsx';
+import { ButtonSubmit, CenterText } from './styled/Styled.jsx';
 
 class Book extends React.Component {
   constructor(props) {
@@ -43,12 +44,12 @@ class Book extends React.Component {
           {this.state.checkedIn && this.state.checkedOut ? <PriceSummary /> : null}
         </div>
         <div>
-          <button type="submit">
+          <ButtonSubmit type="submit">
             <span>Request to Book</span>
-          </button>
+          </ButtonSubmit>
         </div>
         <div>
-          <span>You won't be charged yet</span>
+          <CenterText>You won't be charged yet</CenterText>
         </div>
       </form>
     );

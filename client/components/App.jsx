@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Book from './Book.jsx';
-import { Module, Wrapper, FlagWidget } from './styled/Styled.jsx';
+import { 
+  Module, Wrapper, FlagWidget, ButtonUnderline, Divider,
+} from './styled/Styled.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,13 +44,17 @@ class App extends React.Component {
         <Module>
           <div>
             <div>
-              <Header />
+              <Header state={this.state} />
+              <Divider />
               <Book />
             </div>
           </div>
         </Module>
         <FlagWidget>
-          <span>Report this listing</span>
+          <ButtonUnderline>
+            <i className="far fa-flag" />
+            <span> Report this listing</span>
+          </ButtonUnderline>
         </FlagWidget>
       </Wrapper>
     );

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Text } from './styled/Styled.jsx';
 
 const Dates = () => (
   <div>
     <label>
-      <span>Dates</span>
+      <Text>Dates</Text>
     </label>
     <div>
       <div>
