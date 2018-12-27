@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Book from './Book.jsx';
+import { Module, Wrapper, FlagWidget } from './styled/Styled.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const roomId = window.location.pathname.substring(7, 10);
+    const roomId = window.location.pathname.slice(7, -1);
     fetch(`/rooms/${roomId || 100}/booking`)
       .then((data) => {
         return data.json();
@@ -37,15 +38,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <Header />
-          <Book />
+      <Wrapper>
+        <Module>
           <div>
-            <span>Report this listing</span>
+            <div>
+              <Header />
+              <Book />
+            </div>
           </div>
-        </div>
-      </div>
+        </Module>
+        <FlagWidget>
+          <span>Report this listing</span>
+        </FlagWidget>
+      </Wrapper>
     );
   }
 }
