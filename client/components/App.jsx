@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Book from './Book.jsx';
-import { 
-  Module, Wrapper, FlagWidget, ButtonUnderline, Divider,
+import {
+  Module, MainWrapper, FlagWidget, ButtonUnderline, Divider,
 } from './styled/Styled.jsx';
 
 class App extends React.Component {
@@ -40,7 +40,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <MainWrapper>
         <Module>
           <div>
             <div>
@@ -56,7 +56,7 @@ class App extends React.Component {
             <span> Report this listing</span>
           </ButtonUnderline>
         </FlagWidget>
-      </Wrapper>
+      </MainWrapper>
     );
   }
 }
