@@ -46,7 +46,7 @@ class App extends React.Component {
             <div>
               <Header state={this.state} />
               <Divider />
-              <Book />
+              <Book state={this.state} />
             </div>
           </div>
         </Module>
