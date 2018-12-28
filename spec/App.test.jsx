@@ -8,7 +8,7 @@ import Dates from '../client/components/Dates.jsx';
 import Guests from '../client/components/Guests.jsx';
 import PriceSummary from '../client/components/PriceSummary.jsx';
 import {
-  Price, Button, ButtonSubmit, ButtonQuest, Text,
+  Price, Button, ButtonSubmit, ButtonQuest, BoldText,
 } from '../client/components/styled/Styled.jsx';
 
 const { sampleState } = require('./sampleData.js');
@@ -44,7 +44,7 @@ describe('Header component', () => {
 
   it('should contain a button that indicates the number of reviews', () => {
     const reviewsButton = wrapper.find(Button);
-    const reviewCount = wrapper.find(Text).get(1).props.children;
+    const reviewCount = wrapper.find(BoldText).get(1).props.children;
     expect(reviewsButton).toHaveLength(1);
     expect(typeof reviewCount).toBe('number');
   });

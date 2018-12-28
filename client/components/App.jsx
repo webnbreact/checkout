@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Book from './Book.jsx';
+import HighViews from './HighViews.jsx';
 import {
   Module, MainWrapper, FlagWidget, ButtonUnderline, Divider,
 } from './styled/Styled.jsx';
@@ -21,7 +22,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const roomId = window.location.pathname.slice(7, -1);
-    fetch(`/rooms/${roomId || 100}/booking`)
+    const randomRoomId = Math.ceil(Math.random() * 100);
+    fetch(`/rooms/${roomId || randomRoomId}/booking`)
       .then((data) => {
         return data.json();
       }).then((roomInfo) => {
@@ -48,6 +50,9 @@ class App extends React.Component {
               <Divider />
               <Book state={this.state} />
             </div>
+          </div>
+          <div>
+            <HighViews pastWeekViews={this.state.pastWeekViews} />
           </div>
         </Module>
         <FlagWidget>

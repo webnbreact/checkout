@@ -78,9 +78,14 @@ export const Price = styled.span`
   font-weight: bold;
 `;
 
-export const Text = styled.span`
+export const BoldText = styled.span`
   font-size: small;
   font-weight: 500;
+`;
+
+export const Text = styled.div`
+  font-size: 14.75px;
+  padding: 8px 0;
 `;
 
 export const BoxText = styled.div`

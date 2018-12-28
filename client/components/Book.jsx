@@ -8,7 +8,7 @@ class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checkedIn: false,    // default value should be true
+      checkedIn: false,    // default value should be false
       checkedOut: false,   // changed to true for testing
       checkinDate: null,
       checkoutDate: null,

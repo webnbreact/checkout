@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, Price, StarStyle } from './styled/Styled.jsx';
+import { Button, BoldText, Price, StarStyle } from './styled/Styled.jsx';
 
 const Header = ({ state }) => {
   const numStars = Math.floor(state.avgRating / 2);
@@ -11,7 +11,7 @@ const Header = ({ state }) => {
     <div style={{ marginBottom: '15px' }}>
       <div>
         <Price>${state.nightlyPrice}</Price>
-        <Text> per night</Text>
+        <BoldText> per night</BoldText>
       </div>
       <div>
         <Button>
@@ -30,7 +30,7 @@ const Header = ({ state }) => {
                 </StarStyle>
               );
             })}
-            <Text>{state.reviewCount}</Text>
+            <BoldText>{state.reviewCount}</BoldText>
           </span>
         </Button>
       </div>
