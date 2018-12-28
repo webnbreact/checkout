@@ -1,9 +1,9 @@
 import React from 'react';
 import GuestDropdown from './GuestDropdown.jsx';
-import { BoldText, BoxText, BoxIcon, BoxWrapper, GuestMenuBtn } from './styled/Styled.jsx';
+import { GuestsStyle, BoldText, BoxText, BoxIcon, BoxWrapper, GuestMenuBtn } from './styled/Styled.jsx';
 
 const Guests = ({dropdown, displayDropdown, handleChange}) => (
-  <div>
+  <GuestsStyle>
     <div style={{ marginBottom: '5px' }}>
       <BoldText>Guests</BoldText>
     </div>
@@ -20,7 +20,7 @@ const Guests = ({dropdown, displayDropdown, handleChange}) => (
       </GuestMenuBtn>
       {(dropdown === 'guest') ? <GuestDropdown displayDropdown={displayDropdown} handleChange={handleChange} /> : null}
     </BoxWrapper>
-  </div>
+  </GuestsStyle>
 );
 
 export default Guests;

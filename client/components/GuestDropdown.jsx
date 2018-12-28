@@ -1,7 +1,8 @@
 import React from 'react';
+import { GuestDropdownStyle } from './styled/Styled.jsx';
 
 const GuestDropdown = ({ displayDropdown }) => (
-  <div>
+  <GuestDropdownStyle>
     <div>
       <div>
         [Adult count]
@@ -21,7 +22,7 @@ const GuestDropdown = ({ displayDropdown }) => (
         </div>
       </div>
     </div>
-  </div>
+  </GuestDropdownStyle>
 );
 
 export default GuestDropdown;

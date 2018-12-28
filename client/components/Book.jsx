@@ -2,7 +2,7 @@ import React from 'react';
 import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import PriceSummary from './PriceSummary.jsx';
-import { ButtonSubmit, CenterText } from './styled/Styled.jsx';
+import { ButtonSubmit, CenterText, BookStyle } from './styled/Styled.jsx';
 
 class Book extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class Book extends React.Component {
   render() {
     const { nightlyPrice, cleaningFee, serviceFee } = this.props.state;
     return (
-      <div style={{ marginTop: '15px' }}>
+      <BookStyle>
         <form action="">
           <div>
             <Dates dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} />
@@ -55,7 +55,7 @@ class Book extends React.Component {
             <CenterText>You won't be charged yet</CenterText>
           </div>
         </form>
-      </div>
+      </BookStyle>
     );
   }
 }

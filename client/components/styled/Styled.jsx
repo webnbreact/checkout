@@ -1,5 +1,11 @@
 import styled, { keyframes } from 'styled-components';
 
+export const BookStyle = styled.div`
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+`;
+
 export const BoldText = styled.span`
   font-size: small;
   font-weight: 500;
@@ -21,7 +27,7 @@ export const BoxText = styled.div`
 
 export const BoxWrapper = styled.div`
   height: 42px;
-  width: 327px;
+  width: 324px;
   border: 1px solid #ebebeb;
   border-radius: 2px;
 `;
@@ -49,6 +55,7 @@ export const ButtonSubmit = styled(Button)`
   color: #ffffff;
   border-radius: 4px;
   margin-top: 26px;
+  margin-left: 1px;
 `;
 
 export const ButtonUnderline = styled(Button)`
@@ -74,7 +81,7 @@ export const CalSelect = styled.input`
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  width: 150px;
+  width: 148px;
   height: 100%;
   font-size: medium;
   padding-left: 18px;
@@ -91,6 +98,21 @@ export const FlexBox = styled.div`
   height: 100%;
   display: flex;
   justify-content: left;
+`;
+
+export const GuestsStyle = styled.div`
+  margin-top: 12px;
+`;
+
+export const GuestDropdownStyle = styled.div`
+  height: 329px;
+  width: 100%;
+  border: 0.5px solid #dedede;
+  box-shadow: 0 0 1px black;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  background-color: white;
 `;
 
 export const GuestMenuBtn = styled(Button)`
@@ -157,10 +179,12 @@ const slide = keyframes`
 
 export const SlideDown = styled.div`
   animation: 2s ${slide};
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   overflow-y: hidden;
   max-height: 0;
+  position: relative;
+  z-index: 1;
 `;
 
 export const StarStyle = styled.span`
