@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, BoxWrapper, FlexBox, CalSelect } from './styled/Styled.jsx';
+import { BoldText, BoxWrapper, FlexBox, CalSelect } from './styled/Styled.jsx';
 
 const Dates = () => (
   <div>
     <div style={{ marginBottom: '5px' }}>
-      <Text>Dates</Text>
+      <BoldText>Dates</BoldText>
     </div>
     <BoxWrapper>
       <FlexBox>

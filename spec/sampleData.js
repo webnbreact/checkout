@@ -1,4 +1,4 @@
-module.exports.headerData = {
+module.exports.sampleState = {
   avgRating: 1,
   cleaningFee: 46,
   lastUpdated: "2018-08-09T07:00:00.000Z",

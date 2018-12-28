@@ -1,14 +1,15 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-const Module = styled.div`
+export const Module = styled.div`
   box-sizing: border-box;
-  height: 365px;
+  min-height: 365px;
   border: 1px solid #ebebeb;
-  margin-top: 76px;
-  padding: 26px;
+  margin-top: 66px;
+  padding: 18px 26px;
+  overflow: hidden;
 `;
 
-const MainWrapper = styled.div`
+export const MainWrapper = styled.div`
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 0 51px;
   overflow: hidden;
@@ -16,25 +17,25 @@ const MainWrapper = styled.div`
   width: 377px;
 `;
 
-const BoxWrapper = styled.div`
+export const BoxWrapper = styled.div`
   height: 42px;
   width: 327px;
   border: 1px solid #ebebeb;
   border-radius: 2px;
 `;
 
-const FlagWidget = styled.div`
+export const FlagWidget = styled.div`
   text-align: center;
   margin: 15px;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
 `;
 
-const ButtonUnderline = styled(Button)`
+export const ButtonUnderline = styled(Button)`
   font-size: 13.5px;
   font-weight: 300;
   &:hover {
@@ -42,7 +43,15 @@ const ButtonUnderline = styled(Button)`
   };
 `;
 
-const ButtonSubmit = styled(Button)`
+export const ButtonQuest = styled(Button)`
+  font-size: 15px;
+  padding-left: 5px;
+  &:hover {
+    color: rgb(0, 132, 137);
+  };
+`;
+
+export const ButtonSubmit = styled(Button)`
   width: 100%;
   height: 3em;
   background-color: #fd5a5f;
@@ -53,28 +62,33 @@ const ButtonSubmit = styled(Button)`
   margin-top: 26px;
 `;
 
-const GuestMenuBtn = styled(Button)`
+export const GuestMenuBtn = styled(Button)`
   width: 100%;
   height: 100%;
   text-align: unset;
 `;
 
-const Divider = styled.hr`
+export const Divider = styled.hr`
   background-color: transparent;
   border: 0.5px solid #ebebeb;
 `;
 
-const Price = styled.span`
+export const Price = styled.span`
   font-size: x-large;
   font-weight: bold;
 `;
 
-const Text = styled.span`
+export const BoldText = styled.span`
   font-size: small;
   font-weight: 500;
 `;
 
-const BoxText = styled.div`
+export const Text = styled.div`
+  font-size: 14.75px;
+  padding: 8px 0;
+`;
+
+export const BoxText = styled.div`
   font-size: medium;
   font-weight: 300;
   position: relative;
@@ -82,32 +96,32 @@ const BoxText = styled.div`
   left: 18px;
 `;
 
-const BoxIcon = styled.div`
+export const BoxIcon = styled.div`
   position: relative;
   float: right;
   right: 18px;
 `;
 
-const CenterText = styled(FlagWidget)`
+export const CenterText = styled(FlagWidget)`
   margin: 10px;
   font-weight: 500;
   font-size: 12px;
 `;
 
-const StarStyle = styled.span`
+export const StarStyle = styled.span`
   color: #108489;
   position: relative;
   bottom: 2.5px;
 `;
 
-const FlexBox = styled.div`
+export const FlexBox = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: left;
 `;
 
-const CalSelect = styled.input`
+export const CalSelect = styled.input`
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -118,22 +132,44 @@ const CalSelect = styled.input`
   border: none;
 `;
 
-export {
-  Module,
-  MainWrapper,
-  BoxWrapper,
-  FlagWidget,
-  Button,
-  ButtonUnderline,
-  ButtonSubmit,
-  GuestMenuBtn,
-  Divider,
-  Price,
-  Text,
-  BoxText,
-  BoxIcon,
-  CenterText,
-  StarStyle,
-  FlexBox,
-  CalSelect,
-};
+export const PriceSummaryStyle = styled.div`
+  box-sizing: border-box;
+  height: 131px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 18px;
+`;
+
+export const PriceSummaryLine = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 24px;
+  font-size: medium;
+  font-weight: 300;
+  padding-top: 3px;
+  box-sizing: border-box;
+`;
+
+const slide = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  50% {
+    max-height: 150px;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    max-height: 150px;
+    transform: translateY(0);
+  }
+`;
+
+export const SlideDown = styled.div`
+  animation: 2s ${slide};
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  overflow-y: hidden;
+  max-height: 0;
+`;

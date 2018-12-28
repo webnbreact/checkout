@@ -1,11 +1,11 @@
 import React from 'react';
 import GuestDropdown from './GuestDropdown.jsx';
-import { Text, BoxText, BoxIcon, BoxWrapper, GuestMenuBtn } from './styled/Styled.jsx';
+import { BoldText, BoxText, BoxIcon, BoxWrapper, GuestMenuBtn } from './styled/Styled.jsx';
 
 const Guests = ({dropdown, displayDropdown, handleChange}) => (
   <div>
     <div style={{ marginBottom: '5px' }}>
-      <Text>Guests</Text>
+      <BoldText>Guests</BoldText>
     </div>
     <BoxWrapper>
       <GuestMenuBtn type="button" onClick={() => displayDropdown('guest')}>
