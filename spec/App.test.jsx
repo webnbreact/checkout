@@ -7,10 +7,12 @@ import Book from '../client/components/Book.jsx';
 import Dates from '../client/components/Dates.jsx';
 import Guests from '../client/components/Guests.jsx';
 import PriceSummary from '../client/components/PriceSummary.jsx';
+import HighViews from '../client/components/HighViews.jsx';
 import {
-  Price, Button, ButtonSubmit, ButtonQuest, BoldText,
+  Price, Button, ButtonSubmit, ButtonQuest, BoldText, Text, GuestMenuBtn,
 } from '../client/components/styled/Styled.jsx';
 
+const sinon = require('sinon');
 const { sampleState } = require('./sampleData.js');
 
 describe('App component', () => {
@@ -80,5 +82,41 @@ describe('PriceSummary component', () => {
   it('should contain at least one help button for explaining the \
   service fee (cleaning fee is not always charged)', () => {
     expect(wrapper.find(ButtonQuest).length).toBeGreaterThanOrEqual(1);
+  });
+});
+
+describe('Guests component', () => {
+  const displayDropdownFake = sinon.fake();
+  const wrapper = mount(<Guests displayDropdown={displayDropdownFake} />);
+
+  it('should invoke the displayDropdown method when GuestMenuBtn is clicked', () => {
+    wrapper.find(GuestMenuBtn).simulate('click');
+    expect(displayDropdownFake.callCount).toBe(1);
+  });
+
+  it('should display the text "Guests" at the top of the component', () => {
+    const title = wrapper.find(BoldText).text();
+    expect(title).toBe('Guests');
+  });
+});
+
+describe('HighViews component', () => {
+  it('should contain the text "This home is on people\'s minds"', () => {
+    const wrapper = shallow(<HighViews />);
+    const text = wrapper.find(BoldText).text();
+    expect(text).toBe('This home is on people\'s minds.');
+  });
+
+  it('should display "500+ times" when the past week view count is over 500', () => {
+    let viewCount1 = 499;
+    viewCount1 = (viewCount1 >= 500) ? '500+' : viewCount1; // logic taken from App component
+    const wrapper1 = mount(<HighViews pastWeekViews={viewCount1} />);
+    const viewedText1 = wrapper1.find(Text).text();
+    expect(viewedText1).not.toBe('It\'s been viewed 500+ times in the pastweek.');
+    let viewCount2 = 501;
+    viewCount2 = (viewCount2 >= 500) ? '500+' : viewCount2; // logic taken from App component
+    const wrapper2 = mount(<HighViews pastWeekViews={viewCount2} />);
+    const viewedText2 = wrapper2.find(Text).text();
+    expect(viewedText2).toBe('It\'s been viewed 500+ times in the pastweek.');
   });
 });
