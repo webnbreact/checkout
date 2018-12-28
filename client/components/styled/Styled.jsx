@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export const Module = styled.div`
   box-sizing: border-box;
@@ -148,4 +148,28 @@ export const PriceSummaryLine = styled.div`
   font-weight: 300;
   padding-top: 3px;
   box-sizing: border-box;
+`;
+
+const slide = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  50% {
+    max-height: 150px;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    max-height: 150px;
+    transform: translateY(0);
+  }
+`;
+
+export const SlideDown = styled.div`
+  animation: 2s ${slide};
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  overflow-y: hidden;
+  max-height: 0;
 `;

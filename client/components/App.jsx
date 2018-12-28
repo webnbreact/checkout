@@ -41,6 +41,8 @@ class App extends React.Component {
   }
 
   render() {
+    let views = this.state.pastWeekViews;
+    views = (views >= 500) ? '500+' : views;
     return (
       <MainWrapper>
         <Module>
@@ -52,7 +54,7 @@ class App extends React.Component {
             </div>
           </div>
           <div>
-            <HighViews pastWeekViews={this.state.pastWeekViews} />
+            {this.state.pastWeekViews > 150 ? <HighViews pastWeekViews={views} /> : null}
           </div>
         </Module>
         <FlagWidget>
