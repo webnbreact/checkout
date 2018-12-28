@@ -108,8 +108,7 @@ export const GuestDropdownStyle = styled.div`
   height: 329px;
   width: 100%;
   border: 0.5px solid #dedede;
-  box-shadow: 0 0 1px black;
-  overflow: hidden;
+  box-shadow: 0 0 2px #dedede;
   position: relative;
   z-index: 10;
   background-color: white;
@@ -127,13 +126,11 @@ export const Module = styled.div`
   border: 1px solid #ebebeb;
   margin-top: 66px;
   padding: 18px 26px;
-  overflow: hidden;
 `;
 
 export const MainWrapper = styled.div`
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 0 51px;
-  overflow: hidden;
   color: #484848;
   width: 377px;
 `;
@@ -179,12 +176,11 @@ const slide = keyframes`
 
 export const SlideDown = styled.div`
   animation: 2s ${slide};
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
   overflow-y: hidden;
   max-height: 0;
-  position: relative;
-  z-index: 1;
+  position: static;
 `;
 
 export const StarStyle = styled.span`
