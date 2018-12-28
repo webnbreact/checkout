@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Book from './Book.jsx';
+import {
+  Module, MainWrapper, FlagWidget, ButtonUnderline, Divider,
+} from './styled/Styled.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +20,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const roomId = window.location.pathname.substring(7, 10);
+    const roomId = window.location.pathname.slice(7, -1);
     fetch(`/rooms/${roomId || 100}/booking`)
       .then((data) => {
         return data.json();
@@ -37,15 +40,23 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <Header />
-          <Book />
+      <MainWrapper>
+        <Module>
           <div>
-            <span>Report this listing</span>
+            <div>
+              <Header state={this.state} />
+              <Divider />
+              <Book />
+            </div>
           </div>
-        </div>
-      </div>
+        </Module>
+        <FlagWidget>
+          <ButtonUnderline>
+            <i className="far fa-flag" />
+            <span> Report this listing</span>
+          </ButtonUnderline>
+        </FlagWidget>
+      </MainWrapper>
     );
   }
 }

@@ -1,15 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component should render without crashing 1`] = `
-<div>
-  <div>
-    <Header />
-    <Book />
+<styled.div>
+  <styled.div>
     <div>
-      <span>
-        Report this listing
-      </span>
+      <div>
+        <Header
+          state={
+            Object {
+              "avgRating": "",
+              "cleaningFee": "",
+              "lastUpdated": "",
+              "nightlyPrice": "",
+              "pastWeekViews": "",
+              "reviewCount": "",
+              "serviceFee": "",
+            }
+          }
+        />
+        <styled.hr />
+        <Book />
+      </div>
     </div>
-  </div>
-</div>
+  </styled.div>
+  <styled.div>
+    <Styled(styled.button)>
+      <i
+        className="far fa-flag"
+      />
+      <span>
+         Report this listing
+      </span>
+    </Styled(styled.button)>
+  </styled.div>
+</styled.div>
 `;

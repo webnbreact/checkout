@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GuestDropdown = () => (
+const GuestDropdown = ({ displayDropdown }) => (
   <div>
     <div>
       <div>
@@ -17,7 +17,7 @@ const GuestDropdown = () => (
           [guest maximum note]
         </div>
         <div>
-          <button type="button">Close</button>
+          <button type="button" onClick={() => displayDropdown('none')}>Close</button>
         </div>
       </div>
     </div>

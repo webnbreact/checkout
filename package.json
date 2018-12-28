@@ -13,7 +13,8 @@
     "start": "nodemon server/index.js",
     "seed-db": "mysql -u root < db/schema.sql && node db/seedDb.js",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage --colors"
   },
   "dependencies": {
     "express": "^4.16.4",
