@@ -18,7 +18,7 @@ const Guests = ({dropdown, displayDropdown, handleChange}) => (
           </BoxIcon>
         </div>
       </GuestMenuBtn>
-      {(dropdown === 'guest') ? <GuestDropdown displayDropdown={displayDropdown} /> : null}
+      {(dropdown === 'guest') ? <GuestDropdown displayDropdown={displayDropdown} handleChange={handleChange} /> : null}
     </BoxWrapper>
   </div>
 );
