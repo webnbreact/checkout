@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import Book from './Book.jsx';
 import HighViews from './HighViews.jsx';
 import {
-  Module, MainWrapper, FlagWidget, ButtonUnderline, Divider,
+  GlobalStyle, Module, MainWrapper, FlagWidget, ButtonUnderline, Divider,
 } from './styled/Styled.jsx';
 
 class App extends React.Component {
@@ -45,6 +45,7 @@ class App extends React.Component {
     views = (views >= 500) ? '500+' : views;
     return (
       <MainWrapper>
+        <GlobalStyle />
         <Module>
           <div>
             <div>

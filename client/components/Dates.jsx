@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoldText, BoxWrapper, FlexBox, CalSelect } from './styled/Styled.jsx';
+import { BoldText, BoxWrapper, FlexBox, CalSelect, TextSelect } from './styled/Styled.jsx';
 
 const Dates = () => (
   <div>
@@ -8,15 +8,15 @@ const Dates = () => (
     </div>
     <BoxWrapper>
       <FlexBox>
-        <div>
+        <TextSelect>
           <CalSelect type="text" placeholder="Check in" autoComplete="off" style={{ float: 'left' }} />
+        </TextSelect>
+        <div style={{ marginTop: '6.5px' }}>
+          <i className="fas fa-arrow-right" style={{ fontSize: '1.8em' }} />
         </div>
-        <div style={{ marginTop: '5px' }}>
-          <i className="fas fa-arrow-right" style={{ fontSize: '1.95em' }} />
-        </div>
-        <div>
+        <TextSelect>
           <CalSelect type="text" placeholder="Check out" autoComplete="off" style={{ float: 'right' }} />
-        </div>
+        </TextSelect>
       </FlexBox>
     </BoxWrapper>
   </div>

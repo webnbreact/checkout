@@ -8,12 +8,12 @@ const Header = ({ state }) => {
   const halfStar = <i className="fas fa-star-half" />;
 
   return (
-    <div style={{ marginBottom: '15px' }}>
+    <div className="override-line-height" style={{ marginBottom: '15px' }}>
       <div>
         <Price>${state.nightlyPrice}</Price>
         <BoldText> per night</BoldText>
       </div>
-      <div>
+      <div className="override-line-height">
         <Button>
           <span>
             {[...Array(numStars)].map((item, index) => {
@@ -30,7 +30,7 @@ const Header = ({ state }) => {
                 </StarStyle>
               );
             })}
-            <BoldText>{state.reviewCount}</BoldText>
+            <BoldText style={{left: '3px', fontSize: '12px'}}>{state.reviewCount}</BoldText>
           </span>
         </Button>
       </div>

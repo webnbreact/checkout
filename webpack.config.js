@@ -4,8 +4,8 @@ module.exports = {
   mode: 'development',
   entry: path.join(__dirname, '/client/index.jsx'),
   module: {
-    rules: [ 
-      { 
+    rules: [
+      {
         test: [/\.jsx$/],
         exclude: /node_modules/,
         use: {
@@ -14,6 +14,30 @@ module.exports = {
             presets: ['@babel/preset-react', '@babel/preset-env'],
           },
         },
+      }, {
+        test: /\.css$/,
+        use: [{
+          // Adds CSS to the DOM by injecting a `<style>` tag
+          loader: ['style-loader', 'css-loader'],
+        },
+        // {
+        //   // Interprets `@import` and `url()` like `import/require()` and will resolve them
+        //   loader: 'css-loader',
+        // },
+        // {
+        //   // Loader for webpack to process CSS with PostCSS
+        //   loader: 'postcss-loader',
+        //   options: {
+        //     plugins: [
+        //       require('autoprefixer')
+        //     ]
+        //   },
+        // },
+        // {
+          // Loads a SASS/SCSS file and compiles it to CSS
+          // loader: 'sass-loader',
+        // }
+        ],
       },
     ],
   },

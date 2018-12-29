@@ -1,4 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+  .override-line-height {
+    line-height: normal;
+  }
+`;
 
 export const BookStyle = styled.div`
   margin-top: 15px;
@@ -9,6 +15,7 @@ export const BookStyle = styled.div`
 export const BoldText = styled.span`
   font-size: small;
   font-weight: 500;
+  position: relative;
 `;
 
 export const BoxIcon = styled.div`
@@ -18,11 +25,12 @@ export const BoxIcon = styled.div`
 `;
 
 export const BoxText = styled.div`
-  font-size: medium;
-  font-weight: 300;
+  font-size: 18px;
   position: relative;
   float: left;
+  color: #717171;
   left: 18px;
+  top: 5px;
 `;
 
 export const BoxWrapper = styled.div`
@@ -47,7 +55,7 @@ export const ButtonQuest = styled(Button)`
 `;
 
 export const ButtonSubmit = styled(Button)`
-  width: 100%;
+  width: 322px;
   height: 3em;
   background-color: #fd5a5f;
   font-size: 16px;
@@ -59,8 +67,8 @@ export const ButtonSubmit = styled(Button)`
 `;
 
 export const ButtonUnderline = styled(Button)`
-  font-size: 13.5px;
-  font-weight: 300;
+  font-size: 14px;
+  color: #616161;
   &:hover {
     text-decoration: underline;
   };
@@ -105,10 +113,12 @@ export const GuestsStyle = styled.div`
 `;
 
 export const GuestDropdownStyle = styled.div`
-  height: 329px;
+  height: 315px;
   width: 100%;
   border: 0.5px solid #dedede;
-  box-shadow: 0 0 2px #dedede;
+  border-top: 2px solid #0e787c;
+  box-shadow: -0.5px 0.5px 4px #dedede;
+  border-radius: 4px;
   position: relative;
   z-index: 10;
   background-color: white;
@@ -124,8 +134,8 @@ export const Module = styled.div`
   box-sizing: border-box;
   min-height: 365px;
   border: 1px solid #ebebeb;
-  margin-top: 66px;
-  padding: 18px 26px;
+  margin-top: 70px;
+  padding: 18px 26px 15px 26px;
 `;
 
 export const MainWrapper = styled.div`
@@ -163,7 +173,7 @@ const slide = keyframes`
     opacity: 0;
     transform: translateY(-150px);
   }
-  50% {
+  25% {
     max-height: 150px;
     transform: translateY(0);
   }
@@ -187,9 +197,17 @@ export const StarStyle = styled.span`
   color: #108489;
   position: relative;
   bottom: 2.5px;
+  font-size: xx-small;
 `;
 
 export const Text = styled.div`
   font-size: 14.75px;
-  padding: 8px 0;
+  padding: 4px 0;
+  line-height: normal;
+`;
+
+export const TextSelect = styled.div`
+  input:focus {
+    background-color: #9aede6;
+  };
 `;

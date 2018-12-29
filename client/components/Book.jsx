@@ -38,7 +38,7 @@ class Book extends React.Component {
     return (
       <BookStyle>
         <form action="">
-          <div>
+          <div className="override-line-height">
             <Dates dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} />
             <Guests dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleChange={this.handleChange} />
           </div>
