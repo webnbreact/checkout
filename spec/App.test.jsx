@@ -92,7 +92,8 @@ describe('PriceSummary component', () => {
 
 describe('Guests component', () => {
   const displayDropdownFake = sinon.fake();
-  const wrapper = mount(<Guests displayDropdown={displayDropdownFake} />);
+  const guests = {};  // guests prop is empty because it's not used in the tests
+  const wrapper = mount(<Guests guests={guests} displayDropdown={displayDropdownFake} />);
 
   it('should invoke the displayDropdown method when GuestMenuBtn is clicked', () => {
     wrapper.find(GuestMenuBtn).simulate('click');

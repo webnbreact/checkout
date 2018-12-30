@@ -30,7 +30,6 @@ export const BoxText = styled.div`
   float: left;
   color: #717171;
   left: 18px;
-  top: 5px;
 `;
 
 export const BoxWrapper = styled.div`
@@ -74,6 +73,11 @@ export const ButtonUnderline = styled(Button)`
   };
 `;
 
+export const ButtonClose = styled(ButtonUnderline)`
+  font-size: 16px;
+  color: #108489;
+`;
+
 export const FlagWidget = styled.div`
   text-align: center;
   margin: 15px;
@@ -113,7 +117,7 @@ export const GuestsStyle = styled.div`
 `;
 
 export const GuestDropdownStyle = styled.div`
-  height: 315px;
+  height: 308px;
   width: 100%;
   border: 0.5px solid #dedede;
   border-top: 2px solid #0e787c;
@@ -122,6 +126,12 @@ export const GuestDropdownStyle = styled.div`
   position: relative;
   z-index: 10;
   background-color: white;
+`;
+
+export const GuestRowStyle = styled.div`
+  height: 72px;
+  width: 294px;
+  border: 1px solid black;
 `;
 
 export const GuestMenuBtn = styled(Button)`

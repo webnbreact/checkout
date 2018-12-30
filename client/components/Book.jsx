@@ -16,7 +16,7 @@ class Book extends React.Component {
       guests: {
         adults: 1,
         children: 0,
-        infants: 0
+        infants: 0,
       },
     };
     this.displayDropdown = this.displayDropdown.bind(this);
@@ -40,7 +40,7 @@ class Book extends React.Component {
         <form action="">
           <div className="override-line-height">
             <Dates dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} />
-            <Guests dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleChange={this.handleChange} />
+            <Guests guests={this.state.guests} dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleChange={this.handleChange} />
           </div>
           <div>
             {this.state.checkedIn && this.state.checkedOut ? 
