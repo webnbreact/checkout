@@ -1,4 +1,4 @@
-import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import styled, { css, keyframes, createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   .override-line-height {
@@ -24,12 +24,21 @@ export const BoxIcon = styled.div`
   right: 18px;
 `;
 
+const HilightedTextStyles = `
+  background-color: #9aede6;
+  padding: 3px 8px;
+  border-radius: 4px;
+`;
+
 export const BoxText = styled.div`
   font-size: 18px;
   position: relative;
   float: left;
   color: #717171;
   left: 18px;
+  div {
+    ${props => (props.dropdown === 'guest') ? css`${HilightedTextStyles}` : ''}
+  };
 `;
 
 export const BoxWrapper = styled.div`
@@ -47,7 +56,13 @@ export const Button = styled.button`
 
 export const ButtonAddGuest = styled(Button)`
   font-size: 30px;
-  color: #12858a;
+  color: ${(props) => {
+    return (props.disabled) ? '#b4dadb' : '#12858a';
+  }};
+  cursor: ${(props) => {
+    return (props.disabled) ? 'default' : 'pointer';
+  }};
+
 `;
 
 export const ButtonQuest = styled(Button)`
@@ -129,7 +144,8 @@ export const GuestDropdownStyle = styled.div`
   box-shadow: -0.5px 0.5px 4px #dedede;
   border-radius: 4px;
   position: relative;
-  z-index: 10;
+  top: -2px;
+  z-index: 3;
   background-color: white;
 `;
 

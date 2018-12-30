@@ -12,7 +12,7 @@ class Book extends React.Component {
       checkedOut: false,   // changed to true for testing
       checkinDate: null,
       checkoutDate: null,
-      dropdown: 'none',     // -> can be 'guest', 'checkinCal', or 'checkoutCal'
+      dropdown: 'none',     // can be 'guest', 'checkinCal', or 'checkoutCal'
       guests: {
         adults: 1,
         children: 0,

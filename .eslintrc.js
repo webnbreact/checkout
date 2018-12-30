@@ -8,5 +8,6 @@ module.exports = {
         'arrow-body-style': 0,
         'import/extensions': 0,
         'no-undef': 0,
+        'no-multi-spaces': 0,
     }
 };

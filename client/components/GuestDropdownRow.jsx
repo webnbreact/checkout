@@ -14,6 +14,9 @@ const GuestDropdownRow = ({ guests, group, ages, handleGuestCountChange }) => {
   const adultsPadTop = 'row no-gutters pt-2';
   const noPad = 'row no-gutters';
   const ageGroup = group.toLowerCase();
+  const groupCount = guests[ageGroup];
+  const guestCount = guests.adults + guests.children;
+  const infantCount = guests.infants;
   return (
     <GuestRowStyle>
       <div className="row no-gutters align-items-center h-100">
@@ -24,7 +27,7 @@ const GuestDropdownRow = ({ guests, group, ages, handleGuestCountChange }) => {
         <div className="col-5">
           <div className={group === 'Adults' ? adultsPadTop : noPad}>
             <div className="col">
-              <ButtonAddGuest type="button" onClick={() => handleGuestCountChange(ageGroup, -1)}>
+              <ButtonAddGuest disabled={group === 'Adults' ? guests.adults === 1 : groupCount === 0} type="button" onClick={() => handleGuestCountChange(ageGroup, -1)}>
                 <i className="fas fa-minus-circle" />
               </ButtonAddGuest>
             </div>
@@ -32,7 +35,7 @@ const GuestDropdownRow = ({ guests, group, ages, handleGuestCountChange }) => {
               {guests[ageGroup]}
             </div>
             <div className="col">
-              <ButtonAddGuest type="button" onClick={() => handleGuestCountChange(ageGroup, 1)}>
+              <ButtonAddGuest disabled={group === 'Infants' ? infantCount === 5 : guestCount === 4} type="button" onClick={() => handleGuestCountChange(ageGroup, 1)}>
                 <i className="fas fa-plus-circle" />
               </ButtonAddGuest>
             </div>
