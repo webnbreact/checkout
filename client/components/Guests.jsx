@@ -2,7 +2,7 @@ import React from 'react';
 import GuestDropdown from './GuestDropdown.jsx';
 import { GuestsStyle, BoldText, BoxText, BoxIcon, BoxWrapper, GuestMenuBtn } from './styled/Styled.jsx';
 
-const Guests = ({guests, dropdown, displayDropdown, handleChange}) => {
+const Guests = ({guests, dropdown, displayDropdown, handleGuestCountChange}) => {
   const guestCount = guests.adults + guests.children;
   const infantCount = guests.infants;
   const infantDisplay = (<span>, {infantCount} infant{infantCount > 1 ? 's' : null}</span>);
@@ -25,7 +25,7 @@ const Guests = ({guests, dropdown, displayDropdown, handleChange}) => {
             </BoxIcon>
           </div>
         </GuestMenuBtn>
-        {(dropdown === 'guest') ? <GuestDropdown displayDropdown={displayDropdown} handleChange={handleChange} /> : null}
+        {(dropdown === 'guest') ? <GuestDropdown guests={guests} displayDropdown={displayDropdown} handleGuestCountChange={handleGuestCountChange} /> : null}
       </BoxWrapper>
     </GuestsStyle>
   );

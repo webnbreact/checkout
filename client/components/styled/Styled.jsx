@@ -45,6 +45,11 @@ export const Button = styled.button`
   padding: 0;
 `;
 
+export const ButtonAddGuest = styled(Button)`
+  font-size: 30px;
+  color: #12858a;
+`;
+
 export const ButtonQuest = styled(Button)`
   font-size: 15px;
   padding-left: 5px;
@@ -131,7 +136,6 @@ export const GuestDropdownStyle = styled.div`
 export const GuestRowStyle = styled.div`
   height: 72px;
   width: 294px;
-  border: 1px solid black;
 `;
 
 export const GuestMenuBtn = styled(Button)`

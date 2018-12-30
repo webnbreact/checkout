@@ -20,7 +20,7 @@ class Book extends React.Component {
       },
     };
     this.displayDropdown = this.displayDropdown.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleGuestCountChange = this.handleGuestCountChange.bind(this);
   }
 
   displayDropdown(item) {
@@ -29,8 +29,21 @@ class Book extends React.Component {
     });
   }
 
-  handleChange(e) {
-    // TO BE FILLED OUT
+  handleGuestCountChange(ageGroup, count) {
+    const {adults, children, infants} = this.state.guests;
+    const totalGuests = adults + children;
+    if (this.state.guests[ageGroup] === 0 && count === -1) {
+      return;
+    }
+    if (totalGuests >= 4 && count === 1 && ageGroup !== 'infants') {
+      return;
+    }
+    if (infants >= 5 && ageGroup === 'infants' && count === 1) {
+      return;
+    }
+    const guests = {...this.state.guests};
+    guests[ageGroup] = this.state.guests[ageGroup] + count;
+    this.setState({guests});
   }
 
   render() {
@@ -40,7 +53,7 @@ class Book extends React.Component {
         <form action="">
           <div className="override-line-height">
             <Dates dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} />
-            <Guests guests={this.state.guests} dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleChange={this.handleChange} />
+            <Guests guests={this.state.guests} dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleGuestCountChange={this.handleGuestCountChange} />
           </div>
           <div>
             {this.state.checkedIn && this.state.checkedOut ? 
