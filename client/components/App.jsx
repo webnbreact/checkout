@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import Header from './Header.jsx';
 import Book from './Book.jsx';
 import HighViews from './HighViews.jsx';
@@ -21,6 +22,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    $('[data-toggle="tooltip"]')
+      .tooltip({
+        trigger: 'focus',
+      });
     const roomId = window.location.pathname.slice(7, -1);
     const randomRoomId = Math.ceil(Math.random() * 100);
     fetch(`/rooms/${roomId || randomRoomId}/booking`)
