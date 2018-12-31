@@ -67,13 +67,18 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       </span>
     </div>
   </styled.div>
-  <styled.hr />
+  <Styled(styled.hr) />
   <styled.div>
     <div>
       <span>
         Cleaning fee
       </span>
-      <Styled(styled.button)>
+      <Styled(styled.button)
+        className="red-tooltip"
+        data-toggle="tooltip"
+        title="One-time fee charged by host to cover the cost of cleaning their space."
+        type="button"
+      >
         <i
           className="far fa-question-circle"
         />
@@ -85,7 +90,7 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       </span>
     </div>
   </styled.div>
-  <styled.hr />
+  <Styled(styled.hr) />
   <styled.div>
     <div>
       <span
@@ -93,7 +98,11 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       >
         Service fee
       </span>
-      <Styled(styled.button)>
+      <Styled(styled.button)
+        data-toggle="tooltip"
+        title="This helps us run our platform and offer services like 24/7 support on your trip."
+        type="button"
+      >
         <i
           className="far fa-question-circle"
         />
@@ -105,11 +114,11 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       </span>
     </div>
   </styled.div>
-  <styled.hr />
+  <Styled(styled.hr) />
   <styled.div
     style={
       Object {
-        "fontWeight": "500",
+        "fontWeight": "600",
       }
     }
   >

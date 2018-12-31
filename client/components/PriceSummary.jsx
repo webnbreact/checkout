@@ -20,7 +20,6 @@ const PriceSummary = ({ nightlyPrice, cleaningFee, serviceFee }) => (
         <ButtonQuest
           type="button"
           data-toggle="tooltip"
-          className="red-tooltip"
           title="One-time fee charged by host to cover the cost of cleaning their space."
         >
           <i className="far fa-question-circle" />
