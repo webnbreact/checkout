@@ -2,7 +2,7 @@ import React from 'react';
 import Dates from './Dates.jsx';
 import Guests from './Guests.jsx';
 import PriceSummary from './PriceSummary.jsx';
-import { ButtonSubmit, CenterText } from './styled/Styled.jsx';
+import { ButtonSubmit, CenterText, BookStyle } from './styled/Styled.jsx';
 
 class Book extends React.Component {
   constructor(props) {
@@ -12,15 +12,15 @@ class Book extends React.Component {
       checkedOut: false,   // changed to true for testing
       checkinDate: null,
       checkoutDate: null,
-      dropdown: 'none',     // -> can be 'guest', 'checkinCal', or 'checkoutCal'
+      dropdown: 'none',     // can be 'guest', 'checkinCal', or 'checkoutCal'
       guests: {
         adults: 1,
         children: 0,
-        infants: 0
+        infants: 0,
       },
     };
     this.displayDropdown = this.displayDropdown.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleGuestCountChange = this.handleGuestCountChange.bind(this);
   }
 
   displayDropdown(item) {
@@ -29,18 +29,31 @@ class Book extends React.Component {
     });
   }
 
-  handleChange(e) {
-    // TO BE FILLED OUT
+  handleGuestCountChange(ageGroup, count) {
+    const {adults, children, infants} = this.state.guests;
+    const totalGuests = adults + children;
+    if (this.state.guests[ageGroup] === 0 && count === -1) {
+      return;
+    }
+    if (totalGuests >= 4 && count === 1 && ageGroup !== 'infants') {
+      return;
+    }
+    if (infants >= 5 && ageGroup === 'infants' && count === 1) {
+      return;
+    }
+    const guests = {...this.state.guests};
+    guests[ageGroup] = this.state.guests[ageGroup] + count;
+    this.setState({guests});
   }
 
   render() {
     const { nightlyPrice, cleaningFee, serviceFee } = this.props.state;
     return (
-      <div style={{ marginTop: '15px' }}>
+      <BookStyle>
         <form action="">
-          <div>
+          <div className="override-line-height">
             <Dates dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} />
-            <Guests dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleChange={this.handleChange} />
+            <Guests guests={this.state.guests} dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleGuestCountChange={this.handleGuestCountChange} />
           </div>
           <div>
             {this.state.checkedIn && this.state.checkedOut ? 
@@ -55,7 +68,7 @@ class Book extends React.Component {
             <CenterText>You won't be charged yet</CenterText>
           </div>
         </form>
-      </div>
+      </BookStyle>
     );
   }
 }

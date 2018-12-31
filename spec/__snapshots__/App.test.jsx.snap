@@ -2,6 +2,7 @@
 
 exports[`App component should render without crashing 1`] = `
 <styled.div>
+  <GlobalStyleComponent />
   <styled.div>
     <div>
       <div>
@@ -34,6 +35,7 @@ exports[`App component should render without crashing 1`] = `
         />
       </div>
     </div>
+    <div />
   </styled.div>
   <styled.div>
     <Styled(styled.button)>
@@ -44,6 +46,86 @@ exports[`App component should render without crashing 1`] = `
          Report this listing
       </span>
     </Styled(styled.button)>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`PriceSummary component should render in the correct format 1`] = `
+<styled.div>
+  <styled.div>
+    <div>
+      <span>
+        $
+         x 
+        1
+         night
+      </span>
+    </div>
+    <div>
+      <span>
+        $
+      </span>
+    </div>
+  </styled.div>
+  <styled.hr />
+  <styled.div>
+    <div>
+      <span>
+        Cleaning fee
+      </span>
+      <Styled(styled.button)>
+        <i
+          className="far fa-question-circle"
+        />
+      </Styled(styled.button)>
+    </div>
+    <div>
+      <span>
+        $
+      </span>
+    </div>
+  </styled.div>
+  <styled.hr />
+  <styled.div>
+    <div>
+      <span
+        className="service-fee"
+      >
+        Service fee
+      </span>
+      <Styled(styled.button)>
+        <i
+          className="far fa-question-circle"
+        />
+      </Styled(styled.button)>
+    </div>
+    <div>
+      <span>
+        $
+      </span>
+    </div>
+  </styled.div>
+  <styled.hr />
+  <styled.div
+    style={
+      Object {
+        "fontWeight": "500",
+      }
+    }
+  >
+    <div>
+      <span
+        className="total"
+      >
+        Total
+      </span>
+    </div>
+    <div>
+      <span>
+        $
+        NaN
+      </span>
+    </div>
   </styled.div>
 </styled.div>
 `;

@@ -5,9 +5,9 @@ import {
 
 const HighViews = ({ pastWeekViews }) => (
   <SlideDown>
-      <Divider style={{ margin: '25px 0' }} />
+      <Divider style={{ margin: '20px 0' }} />
       <FlexBox style={{ justifyContent: 'space-between', flexWrap: 'wrap' }}>
-        <div>
+        <div style={{ marginLeft: '1px' }}>
           <BoldText style={{ fontSize: '14.5px' }}>
             This home is on people's minds.
           </BoldText>
