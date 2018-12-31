@@ -56,6 +56,7 @@
     "eslint-plugin-react": "^7.11.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
+    "jest-css-modules-transform": "^2.1.1",
     "jest-fetch-mock": "^2.1.0",
     "jest-styled-components": "^6.3.1",
     "node-sass": "^4.11.0",
@@ -68,13 +69,6 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ],
-    "automock": false,
-    "transform": {
-    ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
-    },
-    "moduleNameMapper": {
-    "\\.(css|less|sass|scss)$": "<rootDir>/spec/__mocks__/styleMock.js"
-  }
+    ]
   }
 }

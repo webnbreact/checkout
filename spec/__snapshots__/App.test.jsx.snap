@@ -74,7 +74,6 @@ exports[`PriceSummary component should render in the correct format 1`] = `
         Cleaning fee
       </span>
       <Styled(styled.button)
-        className="red-tooltip"
         data-toggle="tooltip"
         title="One-time fee charged by host to cover the cost of cleaning their space."
         type="button"
