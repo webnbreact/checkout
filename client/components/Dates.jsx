@@ -26,28 +26,19 @@ class Dates extends React.Component {
           <DateRangePicker
             startDateId="startDate"
             endDateId="endDate"
+            startDatePlaceholderText="Check in"
+            endDatePlaceholderText="Check out"
             startDate={this.state.startDate}
             endDate={this.state.endDate}
             numberOfMonths={1}
             onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
             focusedInput={this.state.focusedInput}
             onFocusChange={focusedInput => this.setState({ focusedInput })}
+            readOnly={true}
+            showClearDates={true}
+            noBorder={true}
           />
         </BoxWrapper>
-
-        {/* <BoxWrapper>
-          <FlexBox>
-            <TextSelect>
-              <CalSelect type="text" placeholder="Check in" autoComplete="off" style={{ float: 'left' }} />
-            </TextSelect>
-            <div style={{ marginTop: '6.5px' }}>
-              <i className="fas fa-arrow-right" style={{ fontSize: '1.8em' }} />
-            </div>
-            <TextSelect>
-              <CalSelect type="text" placeholder="Check out" autoComplete="off" style={{ float: 'right' }} />
-            </TextSelect>
-          </FlexBox>
-        </BoxWrapper> */}
       </div>
     );
   }
