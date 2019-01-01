@@ -1,5 +1,6 @@
 import React from 'react';
-import { BoldText, BoxWrapper, FlexBox, CalSelect, TextSelect } from './styled/Styled.jsx';
+import moment from 'moment';
+import { BoldText, BoxWrapper, TimeAgoStyle } from './styled/Styled.jsx';
 
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
@@ -17,6 +18,7 @@ class Dates extends React.Component {
   }
 
   render() {
+    const timeAgo = moment(this.props.lastUpdated).fromNow();
     return (
       <div>
         <div style={{ marginBottom: '5px' }}>
@@ -37,6 +39,8 @@ class Dates extends React.Component {
             readOnly={true}
             showClearDates={true}
             noBorder={true}
+            customCloseIcon={<i className="far fa-calendar-times clear-cal" />}
+            renderCalendarInfo={() => (<TimeAgoStyle>Updated {timeAgo}</TimeAgoStyle>)}
           />
         </BoxWrapper>
       </div>

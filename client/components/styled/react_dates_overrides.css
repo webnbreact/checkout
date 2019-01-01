@@ -15,10 +15,27 @@
   margin-top: -15px;
 }
 
+.DateRangePickerInput_clearDates {
+  right: -12px;
+}
+
 .DayPicker {
   top: -16px;
 }
 
+.clear-cal {
+  color: #17a698;
+}
+
+.clear-cal:hover {
+  color: #b82222;
+}
+
 .CalendarDay__blocked_out_of_range {
   text-decoration: line-through;
+}
+
+.KeyboardShortcutRow_key {
+  background-color: #f2f2f2;
+  font-family: monospace;
 }

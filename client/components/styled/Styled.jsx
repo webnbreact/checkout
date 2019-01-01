@@ -252,3 +252,9 @@ export const TextSelect = styled.div`
     background-color: #9aede6;
   };
 `;
+
+export const TimeAgoStyle = styled.div`
+  margin-left: 25px;
+  padding-bottom: 20px;
+  font-size: small;
+`;

@@ -20,7 +20,7 @@ const roomsPromises = [];
 for (let i = 0; i < 100; i += 1) {
   const roomsPromise = new Promise((resolve, reject) => {
     connection.query(roomsQuery, [faker.finance.amount(50, 500, 0), faker.random.number(1000),
-      faker.finance.amount(0, 100, 0), faker.finance.amount(0, 20, 0), faker.date.past(0.4),
+      faker.finance.amount(0, 100, 0), faker.finance.amount(0, 20, 0), faker.date.past(0.15),
       faker.random.number(400), faker.random.number({ min: 1, max: 10 })], (err, results) => {
       if (err) {
         reject(err);
