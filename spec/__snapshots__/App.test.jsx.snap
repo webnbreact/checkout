@@ -61,13 +61,13 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       <span>
         $
          x 
-        1
          night
       </span>
     </div>
     <div>
       <span>
         $
+        NaN
       </span>
     </div>
   </styled.div>
@@ -114,6 +114,7 @@ exports[`PriceSummary component should render in the correct format 1`] = `
     <div>
       <span>
         $
+        NaN
       </span>
     </div>
   </styled.div>

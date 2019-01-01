@@ -227,7 +227,7 @@ const slide = keyframes`
 
 export const SlideDown = styled.div`
   animation: 2s ${slide};
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   overflow-y: hidden;
   max-height: 0;

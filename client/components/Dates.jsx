@@ -13,6 +13,7 @@ class Dates extends React.Component {
     this.state = {
       startDate: null,
       endDate: null,
+      datesCompleted: false,
       focusedInput: null,
       unavailableDays: [],
     };
@@ -32,6 +33,17 @@ class Dates extends React.Component {
       }
       this.setState({ unavailableDays });
     }
+    const { startDate, endDate, datesCompleted } = this.state;
+    if (startDate !== null && endDate !== null && !datesCompleted) {
+      this.setState({ datesCompleted: true }, () => {
+        this.props.handleDateChange(startDate, endDate);
+      });
+    }
+    if (startDate === null && endDate === null && datesCompleted) {
+      this.setState( { datesCompleted: false }, () => {
+        this.props.handleDateChange(null, null);
+      });
+    }
   }
 
   isDayBlocked(day) {
@@ -49,8 +61,8 @@ class Dates extends React.Component {
         </div>
         <BoxWrapper>
           <DateRangePicker
-            startDateId="startDate"
-            endDateId="endDate"
+            startDateId="checkinDate"
+            endDateId="checkoutDate"
             startDatePlaceholderText="Check in"
             endDatePlaceholderText="Check out"
             startDate={this.state.startDate}
