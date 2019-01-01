@@ -10,11 +10,13 @@ exports[`App component should render without crashing 1`] = `
           state={
             Object {
               "avgRating": "",
+              "bookedDates": Array [],
               "cleaningFee": "",
               "lastUpdated": "",
               "nightlyPrice": "",
               "pastWeekViews": "",
               "reviewCount": "",
+              "roomId": "",
               "serviceFee": "",
             }
           }
@@ -24,11 +26,13 @@ exports[`App component should render without crashing 1`] = `
           state={
             Object {
               "avgRating": "",
+              "bookedDates": Array [],
               "cleaningFee": "",
               "lastUpdated": "",
               "nightlyPrice": "",
               "pastWeekViews": "",
               "reviewCount": "",
+              "roomId": "",
               "serviceFee": "",
             }
           }

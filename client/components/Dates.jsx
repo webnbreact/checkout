@@ -14,7 +14,30 @@ class Dates extends React.Component {
       startDate: null,
       endDate: null,
       focusedInput: null,
+      unavailableDays: [],
     };
+    this.isDayBlocked = this.isDayBlocked.bind(this);
+  }
+
+  componentDidUpdate() {
+    const { bookedDates } = this.props;
+    const unavailableDays = [];
+    if (this.state.unavailableDays.length === 0) {
+      for (let i = 0; i < bookedDates.length; i += 1) {
+        let startDay = moment(bookedDates[i].check_in);
+        let endDay = moment(bookedDates[i].check_out);
+        for (let currDay = startDay; currDay.isBefore(endDay); currDay.add(1, 'day')) {
+          unavailableDays.push(currDay.format());
+        }
+      }
+      this.setState({ unavailableDays });
+    }
+  }
+
+  isDayBlocked(day) {
+    return this.state.unavailableDays.some((unavailableDay) => {
+      return moment(unavailableDay).isSame(day, 'day');
+    });
   }
 
   render() {
@@ -41,6 +64,7 @@ class Dates extends React.Component {
             noBorder={true}
             customCloseIcon={<i className="far fa-calendar-times clear-cal" />}
             renderCalendarInfo={() => (<TimeAgoStyle>Updated {timeAgo}</TimeAgoStyle>)}
+            isDayBlocked={this.isDayBlocked}
           />
         </BoxWrapper>
       </div>

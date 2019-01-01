@@ -40,7 +40,7 @@ Promise.all(roomsPromises)
     while (roomId <= 100) {
       const bookingsPerRoom = faker.random.number({ min: 400, max: 700 });
       for (let i = 0; i < bookingsPerRoom; i += 1) {
-        const checkInDate = faker.date.between('2018-12-01', '2019-12-31');
+        const checkInDate = faker.date.between('2019-01-01', '2019-12-31');
         const checkOutDate = faker.date.future((14 / 365), checkInDate);
         const bookingsPromise = new Promise((resolve, reject) => {
           connection.query(bookingsQuery, [roomId, checkInDate, checkOutDate, faker.random.number({ min: 1, max: 3 }),

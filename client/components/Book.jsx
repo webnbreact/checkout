@@ -47,12 +47,12 @@ class Book extends React.Component {
   }
 
   render() {
-    const { nightlyPrice, cleaningFee, serviceFee, lastUpdated } = this.props.state;
+    const { nightlyPrice, cleaningFee, serviceFee, lastUpdated, bookedDates } = this.props.state;
     return (
       <BookStyle>
         <form action="">
           <div className="override-line-height">
-            <Dates lastUpdated={lastUpdated} />
+            <Dates lastUpdated={lastUpdated} bookedDates={bookedDates} />
             <Guests guests={this.state.guests} dropdown={this.state.dropdown} displayDropdown={this.displayDropdown} handleGuestCountChange={this.handleGuestCountChange} />
           </div>
           <div>

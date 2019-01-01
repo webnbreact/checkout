@@ -11,6 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      roomId: '',
       nightlyPrice: '',
       pastWeekViews: '',
       cleaningFee: '',
@@ -18,6 +19,7 @@ class App extends React.Component {
       lastUpdated: '',
       reviewCount: '',
       avgRating: '',
+      bookedDates: [],
     };
   }
 
@@ -32,8 +34,14 @@ class App extends React.Component {
       .then((data) => {
         return data.json();
       }).then((roomInfo) => {
-        const { nightly_price, past_week_views, cleaning_fee, service_fee, last_updated, review_count, avg_rating } = roomInfo[0];
+        const { room_id, nightly_price, past_week_views, cleaning_fee, service_fee, last_updated, review_count, avg_rating } = roomInfo[0];
+        const bookedDates = [];
+        for (let i = 0; i < roomInfo.length; i += 1) {
+          const { check_in, check_out } = roomInfo[i];
+          bookedDates.push({ check_in, check_out });
+        }
         this.setState({
+          roomId: room_id,
           nightlyPrice: nightly_price,
           pastWeekViews: past_week_views,
           cleaningFee: cleaning_fee,
@@ -41,6 +49,7 @@ class App extends React.Component {
           lastUpdated: last_updated,
           reviewCount: review_count,
           avgRating: avg_rating,
+          bookedDates: bookedDates,
         });
       }).catch((err) => { throw err; });
   }

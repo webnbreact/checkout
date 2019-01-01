@@ -175,7 +175,7 @@ export const Module = styled.div`
   box-sizing: border-box;
   min-height: 365px;
   border: 1px solid #ebebeb;
-  margin-top: 70px;
+  margin-top: 25px;
   padding: 18px 26px 15px 26px;
 `;
 
