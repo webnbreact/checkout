@@ -73,17 +73,17 @@ describe('Book component', () => {
 
 describe('PriceSummary component', () => {
   const wrapper = mount(<PriceSummary />);
-  
+
   it('should include a line for the Service Fee and Total', () => {
     expect(wrapper.find('span.service-fee').text()).toBe('Service fee');
     expect(wrapper.find('span.total').text()).toBe('Total');
   });
-  
+
   it('should contain at least one help button for explaining the \
   service fee (cleaning fee is not always charged)', () => {
     expect(wrapper.find(ButtonQuest).length).toBeGreaterThanOrEqual(1);
   });
-  
+
   it('should render in the correct format', () => {
     const shallowWrapper = shallow(<PriceSummary />);
     expect(toJson(shallowWrapper)).toMatchSnapshot();

@@ -1,7 +1,6 @@
 import React from 'react';
 import { GuestRowStyle, ButtonAddGuest } from './styled/Styled.jsx';
 
-
 const GuestDropdownRow = ({ guests, group, ages, handleGuestCountChange }) => {
   const agesRow = (
     <div className="row font-weight-normal mt-1 text-muted small">

@@ -10,11 +10,13 @@ exports[`App component should render without crashing 1`] = `
           state={
             Object {
               "avgRating": "",
+              "bookedDates": Array [],
               "cleaningFee": "",
               "lastUpdated": "",
               "nightlyPrice": "",
               "pastWeekViews": "",
               "reviewCount": "",
+              "roomId": "",
               "serviceFee": "",
             }
           }
@@ -24,11 +26,13 @@ exports[`App component should render without crashing 1`] = `
           state={
             Object {
               "avgRating": "",
+              "bookedDates": Array [],
               "cleaningFee": "",
               "lastUpdated": "",
               "nightlyPrice": "",
               "pastWeekViews": "",
               "reviewCount": "",
+              "roomId": "",
               "serviceFee": "",
             }
           }
@@ -57,23 +61,27 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       <span>
         $
          x 
-        1
          night
       </span>
     </div>
     <div>
       <span>
         $
+        NaN
       </span>
     </div>
   </styled.div>
-  <styled.hr />
+  <Styled(styled.hr) />
   <styled.div>
     <div>
       <span>
         Cleaning fee
       </span>
-      <Styled(styled.button)>
+      <Styled(styled.button)
+        data-toggle="tooltip"
+        title="One-time fee charged by host to cover the cost of cleaning their space."
+        type="button"
+      >
         <i
           className="far fa-question-circle"
         />
@@ -85,7 +93,7 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       </span>
     </div>
   </styled.div>
-  <styled.hr />
+  <Styled(styled.hr) />
   <styled.div>
     <div>
       <span
@@ -93,7 +101,11 @@ exports[`PriceSummary component should render in the correct format 1`] = `
       >
         Service fee
       </span>
-      <Styled(styled.button)>
+      <Styled(styled.button)
+        data-toggle="tooltip"
+        title="This helps us run our platform and offer services like 24/7 support on your trip."
+        type="button"
+      >
         <i
           className="far fa-question-circle"
         />
@@ -102,14 +114,15 @@ exports[`PriceSummary component should render in the correct format 1`] = `
     <div>
       <span>
         $
+        NaN
       </span>
     </div>
   </styled.div>
-  <styled.hr />
+  <Styled(styled.hr) />
   <styled.div
     style={
       Object {
-        "fontWeight": "500",
+        "fontWeight": "600",
       }
     }
   >

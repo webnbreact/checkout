@@ -23,6 +23,7 @@
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "jquery": "^3.3.1",
+    "moment": "^2.23.0",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.9",
@@ -30,6 +31,7 @@
     "postcss-loader": "^3.0.0",
     "precss": "^4.0.0",
     "react": "^16.7.0",
+    "react-dates": "^18.3.1",
     "react-dom": "^16.7.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -52,7 +54,9 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
+    "jest-css-modules-transform": "^2.1.1",
     "jest-fetch-mock": "^2.1.0",
     "jest-styled-components": "^6.3.1",
     "node-sass": "^4.11.0",
@@ -65,7 +69,6 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ],
-    "automock": false
+    ]
   }
 }

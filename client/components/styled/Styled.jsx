@@ -67,7 +67,7 @@ export const ButtonAddGuest = styled(Button)`
 
 export const ButtonQuest = styled(Button)`
   font-size: 15px;
-  padding-left: 5px;
+  margin-left: 5px;
   &:hover {
     color: rgb(0, 132, 137);
   };
@@ -98,6 +98,12 @@ export const ButtonClose = styled(ButtonUnderline)`
   color: #108489;
 `;
 
+export const ButtonWrapper = styled.div`
+  button:focus {
+    color: #e7e7e7;
+  }
+`;
+
 export const FlagWidget = styled.div`
   text-align: center;
   margin: 15px;
@@ -123,6 +129,11 @@ export const CalSelect = styled.input`
 export const Divider = styled.hr`
   background-color: transparent;
   border: 0.5px solid #ebebeb;
+`;
+
+export const PriceSummDivider = styled(Divider)`
+  margin-top: 10px;
+  margin-bottom: 5px;
 `;
 
 export const FlexBox = styled.div`
@@ -164,7 +175,7 @@ export const Module = styled.div`
   box-sizing: border-box;
   min-height: 365px;
   border: 1px solid #ebebeb;
-  margin-top: 70px;
+  margin-top: 25px;
   padding: 18px 26px 15px 26px;
 `;
 
@@ -184,16 +195,16 @@ export const PriceSummaryStyle = styled.div`
   box-sizing: border-box;
   height: 131px;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 18px;
+  margin-top: 18px;
+  margin-bottom: 2px;
 `;
 
 export const PriceSummaryLine = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 24px;
-  font-size: medium;
-  font-weight: 300;
+  height: 21px;
+  font-size: 14px;
+  font-weight: 400;
   padding-top: 3px;
   box-sizing: border-box;
 `;
@@ -216,7 +227,7 @@ const slide = keyframes`
 
 export const SlideDown = styled.div`
   animation: 2s ${slide};
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   overflow-y: hidden;
   max-height: 0;
@@ -240,4 +251,10 @@ export const TextSelect = styled.div`
   input:focus {
     background-color: #9aede6;
   };
+`;
+
+export const TimeAgoStyle = styled.div`
+  margin-left: 25px;
+  padding-bottom: 20px;
+  font-size: small;
 `;

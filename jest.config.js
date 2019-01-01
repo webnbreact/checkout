@@ -10,4 +10,8 @@ module.exports = {
   testURL: 'http://localhost',
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
   verbose: false,
+  moduleDirectories: ['node_modules'],
+  moduleNameMapper: {
+    '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
+  },
 };
